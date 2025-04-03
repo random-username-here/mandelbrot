@@ -1,0 +1,53 @@
+## Benchmark parameters:
+
+ - Warmup runs: 4
+ - Main runs: 32
+
+## Running benchmark
+
+Startup run #1 -- time is 366.322998                                                                                
+[#---------------]  1 / 36 -- measuring...Startup run #2 -- time is 361.425018                                                                                
+[#---------------]  2 / 36 -- measuring...Startup run #3 -- time is 361.256989                                                                                
+[##--------------]  3 / 36 -- measuring...Startup run #4 -- time is 361.429016                                                                                
+[##--------------]  4 / 36 -- measuring...Main run #1 -- time is 361.364990                                                                                
+[###-------------]  5 / 36 -- measuring...Main run #2 -- time is 361.444000                                                                                
+[###-------------]  6 / 36 -- measuring...Main run #3 -- time is 361.443024                                                                                
+[####------------]  7 / 36 -- measuring...Main run #4 -- time is 361.431000                                                                                
+[####------------]  8 / 36 -- measuring...Main run #5 -- time is 361.438995                                                                                
+[#####-----------]  9 / 36 -- measuring...Main run #6 -- time is 361.445007                                                                                
+[#####-----------] 10 / 36 -- measuring...Main run #7 -- time is 361.384003                                                                                
+[#####-----------] 11 / 36 -- measuring...Main run #8 -- time is 361.440002                                                                                
+[######----------] 12 / 36 -- measuring...Main run #9 -- time is 361.431976                                                                                
+[######----------] 13 / 36 -- measuring...Main run #10 -- time is 361.434021                                                                                
+[#######---------] 14 / 36 -- measuring...Main run #11 -- time is 361.434021                                                                                
+[#######---------] 15 / 36 -- measuring...Main run #12 -- time is 361.427002                                                                                
+[########--------] 16 / 36 -- measuring...Main run #13 -- time is 361.419006                                                                                
+[########--------] 17 / 36 -- measuring...Main run #14 -- time is 361.420990                                                                                
+[#########-------] 18 / 36 -- measuring...Main run #15 -- time is 361.425018                                                                                
+[#########-------] 19 / 36 -- measuring...Main run #16 -- time is 361.440979                                                                                
+[#########-------] 20 / 36 -- measuring...Main run #17 -- time is 361.425995                                                                                
+[##########------] 21 / 36 -- measuring...Main run #18 -- time is 361.425018                                                                                
+[##########------] 22 / 36 -- measuring...Main run #19 -- time is 361.411011                                                                                
+[###########-----] 23 / 36 -- measuring...Main run #20 -- time is 361.412994                                                                                
+[###########-----] 24 / 36 -- measuring...Main run #21 -- time is 361.412994                                                                                
+[############----] 25 / 36 -- measuring...Main run #22 -- time is 361.407990                                                                                
+[############----] 26 / 36 -- measuring...Main run #23 -- time is 361.373016                                                                                
+[#############---] 27 / 36 -- measuring...Main run #24 -- time is 361.431000                                                                                
+[#############---] 28 / 36 -- measuring...Main run #25 -- time is 361.427002                                                                                
+[#############---] 29 / 36 -- measuring...Main run #26 -- time is 361.407990                                                                                
+[##############--] 30 / 36 -- measuring...Main run #27 -- time is 361.441986                                                                                
+[##############--] 31 / 36 -- measuring...Main run #28 -- time is 361.431000                                                                                
+[###############-] 32 / 36 -- measuring...Main run #29 -- time is 361.434021                                                                                
+[###############-] 33 / 36 -- measuring...Main run #30 -- time is 361.458008                                                                                
+[################] 34 / 36 -- measuring...Main run #31 -- time is 361.436981                                                                                
+[################] 35 / 36 -- measuring...Main run #32 -- time is 361.427002                                                                                
+[################] 36 / 36 -- measuring...
+
+## Benchmark results:
+
+Done 4 warmup runs and 32 measurment runs
+Time avg 361.424561 ms, std dev 0.197642 ms
+With 𝜎 (68% probability) time is 361.424561 ± 0.197642 ms
+With 3𝜎 (99.73% probability) time is 361.424561 ± 0.592927 ms
+Have 0 outliers
+Non-outlier runs are withn 0.301𝜎, outliers (>3𝜎) are withn 0.000𝜎

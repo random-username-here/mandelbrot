@@ -146,21 +146,24 @@ int main(int argc, char * const *argv)
 		switch (opt) {
 		case 'o': {
 			int var = atoi(optarg);
+			printf("Chose mandelbrot %d\n", var);
 			switch(var) {
 			case 0:
+				printf("Using simple mandelbrot\n");
 				mandelbrot = mandelbrot_simple;
 				break;
 			case 1:
+				printf("Using AVX mandelbrot\n");
 				mandelbrot = mandelbrot_avx;
 				break;
 			case 2:
+				printf("Using AVX2 mandelbrot\n");
 				mandelbrot = mandelbrot_avx2;
 				break;
 			default:
 				printf("Unknown optimization option `-o %d`!\n", var);
 				return 1;
 			}
-			mandelbrot = mandelbrot_avx2;
 			break;
 		}
 		case 'b':

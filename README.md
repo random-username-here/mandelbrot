@@ -37,54 +37,54 @@ $ ./viewer
 ### Базовая версия
 
 ```bash
-$ ./viewer -b 32 -s 4
+$ ./viewer -b 64 -s 8
 ```
 
 ```
-Done 4 warmup runs and 32 measurment runs
-Time avg 361.424561 ms, std dev 0.197642 ms
-With 𝜎 (68% probability) time is 361.424561 ± 0.197642 ms
-With 3𝜎 (99.73% probability) time is 361.424561 ± 0.592927 ms
+Done 8 warmup runs and 64 measurment runs
+Time avg 361.370697 ms, std dev 0.153093 ms
+With 𝜎 (68% probability) time is 361.370697 ± 0.153093 ms
+With 3𝜎 (99.73% probability) time is 361.370697 ± 0.459279 ms
 Have 0 outliers
-Non-outlier runs are withn 0.301𝜎, outliers (>3𝜎) are withn 0.000𝜎
+Non-outlier runs are withn 1.988𝜎, outliers (>3𝜎) are withn 0.000𝜎
 ```
 
-Итого, одна `361.42 ± 0.59 ms`.
+Итого, одна `361.37 ± 0.46 ms`.
 
 ### С интринсиками AVX
 
 ```bash
-$ ./viewer -o 1 -b 128 -s 16
+$ ./viewer -o 1 -b 64 -s 8
 ```
 
 ```
-Done 16 warmup runs and 128 measurment runs
-Time avg 73.209534 ms, std dev 0.022097 ms
-With 𝜎 (68% probability) time is 73.209534 ± 0.022097 ms
-With 3𝜎 (99.73% probability) time is 73.209534 ± 0.066291 ms
+Done 8 warmup runs and 64 measurment runs
+Time avg 94.805061 ms, std dev 0.227503 ms
+With 𝜎 (68% probability) time is 94.805061 ± 0.227503 ms
+With 3𝜎 (99.73% probability) time is 94.805061 ± 0.682510 ms
 Have 0 outliers
-Non-outlier runs are withn 1.650𝜎, outliers (>3𝜎) are withn 0.000𝜎
+Non-outlier runs are withn 1.886𝜎, outliers (>3𝜎) are withn 0.000𝜎
 ```
 
-Получили `73.21 ± 0.07 ms`
+Получили `94.80 ± 0.68 ms`
 
 ### С интринсиками AVX2
 
 ```bash
-$ ./viewer -o 2 -b 128 -s 16
+$ ./viewer -o 2 -b 64 -s 8
 ```
 
 ```
-Done 16 warmup runs and 128 measurment runs
-Time avg 48.793472 ms, std dev 0.044194 ms
-With 𝜎 (68% probability) time is 48.793472 ± 0.044194 ms
-With 3𝜎 (99.73% probability) time is 48.793472 ± 0.132583 ms
+Done 8 warmup runs and 64 measurment runs
+Time avg 48.751766 ms, std dev 0.049411 ms
+With 𝜎 (68% probability) time is 48.751766 ± 0.049411 ms
+With 3𝜎 (99.73% probability) time is 48.751766 ± 0.148232 ms
 Have 0 outliers
-Non-outlier runs are withn 0.600𝜎, outliers (>3𝜎) are withn 0.000𝜎
+Non-outlier runs are withn 1.594𝜎, outliers (>3𝜎) are withn 0.000𝜎
 ```
 
-Итого, `48.79 ± 0.13 ms`.
+Итого, `48.75 ± 0.15 ms`.
 
 ## Результат
 
-При AVX ускорение в ~ `4.93` раза, при AVX2 в ~ `7.41` раза.
+При AVX ускорение в ~ `3.8` раза, при AVX2 в ~ `7.4` раза.

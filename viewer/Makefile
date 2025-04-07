@@ -7,7 +7,7 @@ LDFLAGS	= -g
 all: viewer
 
 HDRS	= font.h viewer.h
-OBJS 	= gfx.o window.o ../gen/avx2.o ../gen/simple.o ../gen/avx.o
+OBJS 	= gfx.o window.o ../gen/avx2.o ../gen/simple.o ../gen/avx.o benchmark.o
 
 $(OBJS): $(HDRS) Makefile
 

@@ -18,16 +18,6 @@
 #include "./viewer.h"
 #include "./font.h"
 
-#define DFLT_WIDTH 1024
-#define DFLT_HEIGHT 768
-#define ARROW_STEP_DIST 0.1
-
-#define DIE(fmt, ...) \
-	do {\
-		fprintf(stderr, "Error: " fmt "\n" __VA_OPT__(,) __VA_ARGS__);\
-		exit(EXIT_FAILURE);\
-	} while (0)
-
 static volatile bool shall_quit = false;
 static pthread_mutex_t push_mutex;
 static float render_time;
@@ -59,90 +49,16 @@ static inline ARGB shade(int step) {
 	return RGB(c, c, c);
 }
 
-#define BAR_W 16
 
-void do_benchmark(int num_runs, int num_startup)
-{
-	struct Mb_GeneratorData gdata;
-	gdata.xc = gdata.yc = 0;
-	gdata.swidth = 2;
-	gdata.bwidth = DFLT_WIDTH;
-	gdata.bheight = DFLT_HEIGHT;
-	gdata.exit_steps = aligned_alloc(32, gdata.bwidth * gdata.bheight * sizeof(*gdata.exit_steps));
-	gdata.max_steps = 255;
-
-	float *times = calloc(num_runs + num_startup, sizeof(*times));
-
-	printf("## Benchmark parameters:\n\n");
-	printf(" - Warmup runs: %d\n", num_startup);
-	printf(" - Main runs: %d\n", num_runs);
-	printf("\n");
-	printf("## Running benchmark\n\n");
-
-	for (int i = 0; i < num_startup + num_runs; ++i) {
-		clock_t begin = clock();
-		mandelbrot(&gdata);
-		float run = (clock() - begin) * 1.0f / CLOCKS_PER_SEC * 1000;
-		times[i] = run;
-
-		printf("\r%s run #%d -- time is %f%*s\n", 
-				(i < num_startup ? "Startup" : "Main"), (i < num_startup ? i : i - num_startup) + 1, run, 80, "");
-
-		printf("\r[");
-		for (int j = 0; j < BAR_W; ++j)
-			putc((j > (i+1) * 1.0 / (num_startup + num_runs) * BAR_W) ? '-' : '#', stdout);
-		printf("] %2d / %2d -- measuring...", i+1, num_runs + num_startup);
-		fflush(stdout);
-	}
-	printf("\n\n");
-
-	float time = 0, sqtime = 0;
-	for (int i = 0; i < num_runs; ++i) {
-		float t = times[i+num_startup];
-		time += t;
-		sqtime += t * t;
-	}
-
-	float avg = time / num_runs;
-	float dev = sqrtf(sqtime / num_runs - avg * avg);
-
-	printf("## Benchmark results:\n\n");
-	printf("Done %d warmup runs and %d measurment runs\n", num_startup, num_runs);
-	printf("Time avg %f ms, std dev %f ms\n", avg, dev);
-	printf("With 𝜎 (68%% probability) time is %f ± %f ms\n", avg, dev);
-	printf("With 3𝜎 (99.73%% probability) time is %f ± %f ms\n", avg, dev*3);
-
-	float max_err = 0, max_outlier = 0;
-	int num_outliers = 0;
-	for (int i = 0; i < num_runs; ++i) {
-		float rel_err = fabs(times[num_startup + i] - avg) / dev;
-		if (rel_err > 3) {
-			printf("Warn: Run %d has distance to center %f𝜎\n", i+1, rel_err);
-			max_outlier = fmax(rel_err, max_outlier);
-			++num_outliers;
-		} else {
-			max_err = fmax(rel_err, max_err);
-		}
-	}
-	printf("Have %d outliers\n", num_outliers);
-	printf("Non-outlier runs are withn %0.3f𝜎, outliers (>3𝜎) are withn %0.3f𝜎\n", max_err, max_outlier);
-
-	if (num_outliers == 0)
-		{}
-	else if (num_outliers <= num_runs / 20)
-		printf("Warn: Some values are out 3𝜎, but there are a few of them\n");
-	else
-		printf("Err: > 5%% of values are out of 3𝜎, measurement failed\n");
-}
 
 int main(int argc, char * const *argv)
 {
 	int num_runs = -1;
 	mandelbrot = mandelbrot_simple;
-	int num_startup = 4;
+	float acceptable_var = 1.05;
 
 	int opt = 0;
-	while ((opt = getopt(argc, argv, "o:b:s:")) != -1) {
+	while ((opt = getopt(argc, argv, "o:b:f:")) != -1) {
 		switch (opt) {
 		case 'o': {
 			int var = atoi(optarg);
@@ -169,8 +85,8 @@ int main(int argc, char * const *argv)
 		case 'b':
 			num_runs = atoi(optarg);
 			break;
-		case 's':
-			num_startup = atoi(optarg);
+		case 'f':
+			acceptable_var = atof(optarg);
 			break;
 		default:
 			// getopt prints the error
@@ -178,8 +94,14 @@ int main(int argc, char * const *argv)
 		}
 	}
 
+	struct Mb_BenchmarkState bstate = {
+		.mandelbrot = mandelbrot,
+		.num_runs = num_runs,
+		.acceptable_var = acceptable_var
+	};
+
 	if (num_runs > 0) {
-		do_benchmark(num_runs, num_startup);
+		do_benchmark(&bstate);
 		return 0;
 	}
 

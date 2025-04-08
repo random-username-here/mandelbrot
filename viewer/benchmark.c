@@ -1,8 +1,13 @@
 #define _GNU_SOURCE
 #include <math.h>
-#include <string.h>
 #include "viewer.h"
 #include <stdbool.h>
+
+#define PLOT_WIDTH 4 // 4 omega
+#define SPLIT 16
+
+#define PLOT_ROWS 7
+#define PLOT_COLS (PLOT_WIDTH * SPLIT * 2 + 1)
 
 static void init_gdata(struct Mb_GeneratorData *gdata)
 {
@@ -89,4 +94,50 @@ void do_benchmark(struct Mb_BenchmarkState *state)
 		printf("Warn: Some values are out 3𝜎, but there are a few of them\n");
 	else
 		printf("Err: > 5%% of values are out of 3𝜎, measurement failed\n");
+
+	printf("\nDistribution plot:\n");
+	printf("One tick = one std. dev = %f ms\n\n", dev);
+
+	int cols[PLOT_COLS] = {0};
+
+	const float col_w = dev / SPLIT;
+
+	for (int i = 0; i < num_runs; ++i) {
+		float base = times[i] - (avg - PLOT_COLS * col_w / 2);
+		int at = floorf(base / col_w);
+		if (at < 0 || at >= PLOT_COLS) // out of the plot
+			continue;
+		cols[at]++;
+	}
+
+	/*printf("counts:\n");
+	for (int i = 0; i < PLOT_COLS; ++i)
+		printf("%d ", cols[i]);
+	printf("\n");*/
+
+	int maxv = 0;
+	for (int i = 0; i < PLOT_COLS; ++i)
+		if (maxv < cols[i])
+			maxv = cols[i];
+
+	for (int i = 0; i < PLOT_ROWS; ++i) {
+		printf("  ");
+		for (int j = 0; j < PLOT_COLS; ++j) {
+			float level = cols[j] * 1.0f * PLOT_ROWS / maxv;
+			if (level > PLOT_ROWS - i - 1)
+				printf("#");
+			else
+				printf(" ");
+		}
+		printf("\n");
+	}
+	printf("-");
+	for (int i = 0; i < PLOT_WIDTH * 2; ++i) {
+		printf("+");
+		for (int j = 0; j < SPLIT-1; ++j)
+			printf("-");
+	}
+	printf("+-> time\n");
+	printf("%*s| avg = %f ms", 1 + SPLIT * PLOT_WIDTH, "", avg);
+	
 }

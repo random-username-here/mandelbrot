@@ -1,4 +1,4 @@
-#include "./api.h"
+#include "gen/api.h"
 
 void mandelbrot_simple(struct Mb_GeneratorData *gen)
 {

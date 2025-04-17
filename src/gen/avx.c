@@ -1,4 +1,4 @@
-#include "./api.h"
+#include "gen/api.h"
 #include <x86intrin.h>
 #include <assert.h>
 

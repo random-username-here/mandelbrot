@@ -1,3 +1,10 @@
+# Generated files
 *.log
 *.o
-viewer/viewer
+
+# Executables
+./viewer
+./benchmark
+
+# Config files
+.clangd

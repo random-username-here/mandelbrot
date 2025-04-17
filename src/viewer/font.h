@@ -4,6 +4,7 @@
 #define FONT_SIZE_X 8
 #define FONT_NOF_CHARS 95
 #define FONT_FIRST_CHAR 32
+#define FONT_LINE_GAP 4
 
 #ifdef FONT_IMPL
 static const uint8_t font_bitmap[FONT_NOF_CHARS][FONT_SIZE_Y] = {

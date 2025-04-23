@@ -27,11 +27,13 @@ struct Mb_Generator {
 void mandelbrot_simple(struct Mb_GeneratorData *gen);
 void mandelbrot_avx2(struct Mb_GeneratorData *gen);
 void mandelbrot_avx(struct Mb_GeneratorData *gen);
+void mandelbrot_arrays(struct Mb_GeneratorData *gen);
 
 static const struct Mb_Generator generators[] = {
 	{ mandelbrot_simple, "simple" },
 	{ mandelbrot_avx, "avx" },
-	{ mandelbrot_avx2, "avx2" }
+	{ mandelbrot_avx2, "avx2" },
+	{ mandelbrot_arrays, "arrays" }
 };
 
 #define DEFAULT_GENERATOR 2

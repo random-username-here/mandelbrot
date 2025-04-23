@@ -1,10 +1,4 @@
-# Generated files
-*.log
-*.o
-
-# Executables
-viewer
-benchmark
+build/*
 
 # Config files
 .clangd

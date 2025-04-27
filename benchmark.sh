@@ -1,13 +1,24 @@
 #!/bin/bash
 
-RUNS=128
-FACTOR=1.003
+MEASURMENTS=128
+FACTOR=1.001
 
-mkdir -p build
+RUNS="$(seq 4)"
+VERSIONS="gcc-o2 clang-o2 gcc-o3 clang-o3"
+VARIANTS="arrays" #"simple avx avx2 arrays"
 
-for CC in gcc clang; do
-	for I in simple avx avx2; do
-		echo "==> Running ${I} compiled with ${CC}"
-		stdbuf -o0 "./build/bench-${CC}" -g ${I} -m ${RUNS} -v ${FACTOR} | tee "build/${CC}-${I}.log"
+mkdir -p res/
+touch res/bench.target
+
+for RUN in ${RUNS}; do
+	for NAME in ${VERSIONS}; do
+		for VAR in ${VARIANTS}; do
+			echo
+			echo
+			echo "==> Running ${VAR} compiled with ${NAME}, run #${RUN}"
+			echo
+			stdbuf -o0 "./build/bench-${NAME}" -g ${VAR} -m ${MEASURMENTS} -v ${FACTOR} \
+				| tee "res/${NAME}.${VAR}.${RUN}.log"
+		done
 	done
 done

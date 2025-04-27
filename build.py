@@ -117,12 +117,14 @@ import glob
 
 BUILD_DIR = 'build'
 
-COMMON_CFLAGS = ['-c', '-Wall', '-g', '-O2', '-mavx2', '-Isrc/']
+COMMON_CFLAGS = ['-c', '-Wall', '-g', '-mavx2', '-Isrc/']
 COMMON_LDFLAGS = ['-g', '-lSDL2', '-lm']
 
 CCs = [
-	[ 'gcc', COMMON_CFLAGS, COMMON_LDFLAGS ],
-	[ 'clang', COMMON_CFLAGS, COMMON_LDFLAGS ]
+	[ 'gcc-o2', 'gcc', COMMON_CFLAGS + ['-O2'], COMMON_LDFLAGS ],
+	[ 'clang-o2', 'clang', COMMON_CFLAGS + ['-O2'], COMMON_LDFLAGS ],
+	[ 'gcc-o3', 'gcc', COMMON_CFLAGS + ['-O3'], COMMON_LDFLAGS ],
+	[ 'clang-o3', 'clang', COMMON_CFLAGS + ['-O3'], COMMON_LDFLAGS ],
 ]
 
 COMMON_SOURCES = glob.glob('src/color/*.c') + glob.glob('src/gen/*.c')
@@ -144,9 +146,9 @@ def sourcename_to_objname(c_file, compiler):
 to_clean = []
 
 for cc in CCs:
-	(cc_cmd, cflags, ldflags) = cc
+	(name, cc_cmd, cflags, ldflags) = cc
 
-	get_obj_name = lambda c_file : sourcename_to_objname(c_file, cc_cmd)
+	get_obj_name = lambda c_file : sourcename_to_objname(c_file, name)
 	common_objs = list(map(get_obj_name, COMMON_SOURCES))
 	bench_objs = list(map(get_obj_name, BENCH_SOURCES))
 	viewer_objs = list(map(get_obj_name, VIEWER_SOURCES))
@@ -161,7 +163,7 @@ for cc in CCs:
 			cmd = [ cc_cmd, *cflags, c_file, '-o', obj_file ]
 		)
 
-	viewer_exec = os.path.join(BUILD_DIR, f'viewer-{cc_cmd}')
+	viewer_exec = os.path.join(BUILD_DIR, f'viewer-{name}')
 	to_clean.append(viewer_exec)
 	step(
 		out = viewer_exec,
@@ -169,7 +171,7 @@ for cc in CCs:
 		cmd = [ cc_cmd, *ldflags, *common_objs, *viewer_objs, '-o', viewer_exec ]
 	)
 	
-	bench_exec = os.path.join(BUILD_DIR, f'bench-{cc_cmd}')
+	bench_exec = os.path.join(BUILD_DIR, f'bench-{name}')
 	to_clean.append(bench_exec)
 	step(
 		out = bench_exec,
@@ -185,10 +187,15 @@ step(
 )
 
 step(
-	'bench',
-	phony=True,
-	deps = [f'build/bench-{cc}' for (cc, _, _) in CCs],
+	'res/bench.target',
+	deps = [f'build/bench-{cc}' for (cc, _, _, _) in CCs],
 	cmd = ['./benchmark.sh']
+)
+
+step(
+	'plot.svg',
+	deps = [ 'res/bench.target' ],
+	cmd = [ 'python3', './interpret.py' ]
 )
 
 if __name__ == '__main__':

@@ -1,0 +1,162 @@
+## Starting benchmark
+
+Acceptable variation: 1.001000
+Measure window width: 128
+Algorithm: simple
+## Running benchmark
+
+Run 0    -- time is 417.5070. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 1    -- time is 416.9750. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 2    -- time is 416.9560. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 3    -- time is 416.9630. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 4    -- time is 416.9420. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 5    -- time is 416.9770. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 6    -- time is 416.9700. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 7    -- time is 416.9640. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 8    -- time is 416.9820. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 9    -- time is 416.9530. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 10   -- time is 416.9580. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 11   -- time is 416.9770. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 12   -- time is 417.0380. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 13   -- time is 416.9680. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 14   -- time is 416.9640. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 15   -- time is 416.9700. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 16   -- time is 416.9570. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 17   -- time is 416.9670. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 18   -- time is 416.9540. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 19   -- time is 416.9670. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 20   -- time is 416.9750. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 21   -- time is 416.9620. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 22   -- time is 416.9610. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 23   -- time is 416.9580. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 24   -- time is 416.9490. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 25   -- time is 416.9660. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 26   -- time is 416.9550. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 27   -- time is 416.9670. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 28   -- time is 416.9500. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 29   -- time is 416.9520. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 30   -- time is 416.9750. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 31   -- time is 416.9470. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 32   -- time is 416.9640. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 33   -- time is 416.9720. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 34   -- time is 416.9620. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 35   -- time is 416.9710. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 36   -- time is 416.9510. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 37   -- time is 416.9740. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 38   -- time is 416.9420. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 39   -- time is 416.9480. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 40   -- time is 416.9410. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 41   -- time is 416.9450. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 42   -- time is 416.9570. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 43   -- time is 416.9520. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 44   -- time is 416.9510. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 45   -- time is 416.9630. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 46   -- time is 416.9720. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 47   -- time is 416.9830. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 48   -- time is 416.9850. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 49   -- time is 416.9550. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 50   -- time is 416.9630. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 51   -- time is 416.9810. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 52   -- time is 416.9500. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 53   -- time is 416.9590. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 54   -- time is 416.9570. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 55   -- time is 416.9730. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 56   -- time is 416.9650. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 57   -- time is 416.9660. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 58   -- time is 416.9650. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 59   -- time is 416.9660. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 60   -- time is 416.9670. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 61   -- time is 416.9660. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 62   -- time is 416.9580. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 63   -- time is 416.9610. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 64   -- time is 416.9690. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 65   -- time is 416.9500. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 66   -- time is 416.9670. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 67   -- time is 416.9530. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 68   -- time is 416.9620. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 69   -- time is 416.9590. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 70   -- time is 416.9660. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 71   -- time is 416.9540. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 72   -- time is 416.9570. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 73   -- time is 416.9600. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 74   -- time is 416.9570. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 75   -- time is 416.9610. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 76   -- time is 416.9530. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 77   -- time is 416.9520. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 78   -- time is 416.9700. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 79   -- time is 416.9640. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 80   -- time is 416.9590. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 81   -- time is 416.9620. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 82   -- time is 416.9560. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 83   -- time is 416.9640. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 84   -- time is 416.9540. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 85   -- time is 416.9540. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 86   -- time is 416.9570. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 87   -- time is 416.9640. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 88   -- time is 416.9460. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 89   -- time is 416.9440. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 90   -- time is 416.9860. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 91   -- time is 416.9590. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 92   -- time is 416.9630. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 93   -- time is 416.9680. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 94   -- time is 416.9680. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 95   -- time is 416.9680. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 96   -- time is 416.9560. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 97   -- time is 416.9720. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 98   -- time is 416.9370. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 99   -- time is 416.9560. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 100  -- time is 416.9370. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 101  -- time is 416.9690. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 102  -- time is 416.9560. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 103  -- time is 416.9730. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 104  -- time is 416.9750. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 105  -- time is 416.9610. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 106  -- time is 416.9490. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 107  -- time is 416.9520. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 108  -- time is 416.9650. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 109  -- time is 416.9580. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 110  -- time is 416.9740. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 111  -- time is 416.9610. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 112  -- time is 416.9600. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 113  -- time is 416.9700. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 114  -- time is 416.9600. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 115  -- time is 416.9580. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 116  -- time is 416.9580. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 117  -- time is 416.9600. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 118  -- time is 416.9530. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 119  -- time is 416.9630. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 120  -- time is 416.9650. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 121  -- time is 416.9680. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 122  -- time is 416.9500. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 123  -- time is 416.9530. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 124  -- time is 416.9710. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 125  -- time is 416.9790. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 126  -- time is 416.9700. In last 128  runs -- min 0.00    , max 417.51   -- var inf  
+Run 127  -- time is 416.9480. In last 128  runs -- min 416.94  , max 417.51   -- var 1.0014
+Run 128  -- time is 416.9740. In last 128  runs -- min 416.94  , max 417.04   -- var 1.0002
+The thing is stable enough
+
+
+## Benchmark results:
+
+Done 1 warmup runs and 128 measurment runs
+Time avg 416.962158 ms, std dev 0.011951 ms
+With 𝜎 (68% probability) time is 416.962158 ± 0.011951 ms
+With 3𝜎 (99.73% probability) time is 416.962158 ± 0.035854 ms
+Warn: Run 13 has distance to center 6.345498𝜎
+Have 1 outliers
+Non-outlier runs are withn 2.107𝜎, outliers (>3𝜎) are withn 6.345𝜎
+Warn: Some values are out 3𝜎, but there are a few of them
+
+Distribution plot:
+One tick = one std. dev = 0.011951 ms
+
+                                                           ##       #                                                              
+                                                      #   ###    # ##  # ##  #                                                     
+                                                  # # ##  ### ## #### ## ##  #     #                                               
+                                                  # # ##  ### ## #### ## ##  # #  ##                                               
+                                #      #       ## ### ### ### ## #### ## ### ### ###  #                                            
+                                #     ##  ### ### ### ### ### ## #### ## ### ### ###  #  # # ##  ##                                
+                                #     ##  ### ### ### ### ### ## #### ## ### ### ###  #  # # ##  ##                                
+-+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+-> time
+                                                                 | avg = 416.962158 ms
